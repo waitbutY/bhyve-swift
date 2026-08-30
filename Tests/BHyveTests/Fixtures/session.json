@@ -1,0 +1,12 @@
+{
+  "bhyve_account_groups": null,
+  "bhyve_account_id": null,
+  "bhyve_account_roles": null,
+  "first_name": "Test",
+  "last_name": "User",
+  "orbit_session_token": "eyJhbGciOiJIUzI1NiJ9.REDACTED.SIGNATURE",
+  "require_password_change": false,
+  "roles": null,
+  "user_id": "uu0000000000000000000005",
+  "user_name": "user@example.com"
+}

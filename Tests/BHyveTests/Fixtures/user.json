@@ -1,0 +1,32 @@
+{
+  "email": "user@example.com",
+  "first_name": "Test",
+  "has_flume": false,
+  "has_guardian": false,
+  "id": "uu0000000000000000000005",
+  "last_name": "User",
+  "preferences": {
+    "emails": true,
+    "notify_device_fault": true,
+    "notify_freeze_delay": true,
+    "notify_lite_monthly_reminder": true,
+    "notify_lite_schedule_changes": true,
+    "notify_mode_change": true,
+    "notify_rain_delay": true,
+    "notify_site_access_granted": true,
+    "notify_site_access_level_changed": true,
+    "notify_site_access_revoked": true,
+    "notify_site_manager_added": true,
+    "notify_watering_complete": true,
+    "notify_watering_in_progress": true,
+    "push_notifications": true,
+    "remember_wifi_credentials": true,
+    "sms_notifications": false,
+    "sms_notify_device_fault": true,
+    "sms_notify_high_flow_mainline": true,
+    "sms_notify_high_flow_zone": true,
+    "sms_notify_mainline_break": true,
+    "sms_notify_unscheduled_flow": true,
+    "units": "imperial"
+  }
+}

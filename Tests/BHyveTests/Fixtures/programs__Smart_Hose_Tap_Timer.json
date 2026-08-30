@@ -1,0 +1,134 @@
+[
+  {
+    "budget": 100,
+    "created_at": "2025-05-11T22:35:43.202Z",
+    "device_id": "dd0000000000000000000010",
+    "enabled": false,
+    "frequency": {
+      "type": "even"
+    },
+    "id": "dd0000000000000000000013",
+    "name": "Back Yard",
+    "program": "REDACTED_p_20",
+    "program_start_date": "2025-05-11T05:00:00.000Z",
+    "run_times": [
+      {
+        "run_time": 15,
+        "station": 3
+      },
+      {
+        "run_time": 15,
+        "station": 4
+      }
+    ],
+    "start_times": [
+      "06:00"
+    ],
+    "updated_at": "2026-04-11T22:48:17.651Z",
+    "updated_via": "wifi"
+  },
+  {
+    "budget": 100,
+    "created_at": "2025-12-28T12:11:53.290Z",
+    "device_id": "dd0000000000000000000010",
+    "enabled": false,
+    "frequency": {
+      "days": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "type": "days"
+    },
+    "id": "dd0000000000000000000015",
+    "name": "Winter",
+    "program": "REDACTED_p_22",
+    "program_start_date": "2025-12-28T06:00:00.000Z",
+    "run_times": [
+      {
+        "run_time": 10,
+        "station": 2
+      },
+      {
+        "run_time": 10,
+        "station": 3
+      }
+    ],
+    "start_times": [
+      "13:00"
+    ],
+    "updated_at": "2026-03-01T19:37:13.698Z",
+    "updated_via": "wifi"
+  },
+  {
+    "budget": 100,
+    "created_at": "2026-04-11T22:50:46.627Z",
+    "device_id": "dd0000000000000000000010",
+    "enabled": true,
+    "frequency": {
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "type": "days"
+    },
+    "id": "dd0000000000000000000017",
+    "name": "New Grass PM",
+    "program": "REDACTED_p_24",
+    "program_start_date": "2026-04-11T05:00:00.000Z",
+    "run_times": [
+      {
+        "run_time": 8,
+        "station": 3
+      },
+      {
+        "run_time": 8,
+        "station": 4
+      }
+    ],
+    "start_times": [
+      "18:00"
+    ],
+    "updated_at": "2026-05-30T18:20:09.991Z",
+    "updated_via": "wifi"
+  },
+  {
+    "budget": 100,
+    "created_at": "2026-04-11T22:49:49.468Z",
+    "device_id": "dd0000000000000000000010",
+    "enabled": true,
+    "frequency": {
+      "interval": 1,
+      "interval_hours": 0,
+      "interval_start_time": "2026-04-11T05:00:00.000Z",
+      "type": "interval"
+    },
+    "id": "dd0000000000000000000019",
+    "is_basic_program": false,
+    "name": "New Grass AM",
+    "program": "REDACTED_p_26",
+    "program_start_date": "2026-04-11T05:00:00.000Z",
+    "run_times": [
+      {
+        "run_time": 10,
+        "station": 3
+      },
+      {
+        "run_time": 10,
+        "station": 4
+      }
+    ],
+    "start_times": [
+      "06:45",
+      "13:00"
+    ],
+    "updated_at": "2026-05-30T18:20:01.046Z",
+    "updated_via": "wifi"
+  }
+]

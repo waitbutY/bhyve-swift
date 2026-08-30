@@ -1,0 +1,295 @@
+[
+  {
+    "address": {
+      "city": "Anytown",
+      "country": "US",
+      "state": "CA",
+      "street_address": "123 Fake St",
+      "zip_code": "00000"
+    },
+    "created_at": "2025-05-11T14:29:25.417Z",
+    "device_gateway_topic": "REDACTED_t_1",
+    "firmware_version": "0095",
+    "full_location": "123 Fake St, Anytown, US",
+    "hardware_version": "BH1-0001",
+    "id": "dd0000000000000000000002",
+    "is_connected": true,
+    "last_connected_at": "2026-08-28T07:34:38.968Z",
+    "location": {
+      "coordinates": [
+        0.0,
+        0.0
+      ],
+      "type": "Point"
+    },
+    "mac_address": "REDACTED_m_3",
+    "mesh_id": "nn0000000000000000000004",
+    "name": "Wi-Fi Hub",
+    "network_interface": "wifi",
+    "num_stations": 0,
+    "reference": "REDACTED_m_3",
+    "status": {
+      "rain_delay": 0,
+      "run_mode": "auto",
+      "status_updated_at": "2026-08-28T07:34:38.968Z",
+      "watering_status": null
+    },
+    "timezone": {
+      "dst_offset": 3600,
+      "raw_offset": -21600,
+      "timezone_id": "America/Chicago",
+      "timezone_name": "Central Daylight Time"
+    },
+    "type": "bridge",
+    "updated_at": "2026-08-28T07:34:38.968Z",
+    "user_id": "uu0000000000000000000005",
+    "wifi_version": 83953152
+  },
+  {
+    "address": {
+      "city": "Anytown",
+      "country": "US",
+      "state": "CA",
+      "street_address": "123 Fake St",
+      "zip_code": "00000"
+    },
+    "battery": {
+      "charging": false,
+      "mv": 2659,
+      "percent": 43
+    },
+    "created_at": "2025-05-11T14:31:40.573Z",
+    "device_gateway_topic": "REDACTED_t_1",
+    "et_id": "ee0000000000000000000006",
+    "firmware_version": "0041",
+    "full_location": "123 Fake St, Anytown, US",
+    "google_home_status": null,
+    "hardware_version": "HT25-0000",
+    "id": "dd0000000000000000000007",
+    "is_connected": true,
+    "is_husqvarna_water": false,
+    "last_connected_at": "2026-08-28T07:34:41.179Z",
+    "location": {
+      "coordinates": [
+        0.0,
+        0.0
+      ],
+      "type": "Point"
+    },
+    "mac_address": "REDACTED_m_8",
+    "mesh_id": "nn0000000000000000000004",
+    "name": "Smart Hose Tap Timer",
+    "num_stations": 1,
+    "reference": "REDACTED_r_9",
+    "restricted_frequency": null,
+    "smart_watering_enabled": true,
+    "status": {
+      "last_battery_alarm_at": "2026-06-15T20:17:24.809Z",
+      "next_start_programs": [
+        "c"
+      ],
+      "next_start_time": "2026-08-30T17:15:00-05:00",
+      "rain_delay": 0,
+      "rain_delay_overridden_at": "2026-06-09T03:47:49.983Z",
+      "rain_delay_started_at": "2026-08-30T20:26:28.000Z",
+      "run_mode": "auto",
+      "status_updated_at": "2026-08-30T20:39:33.821Z",
+      "watering_status": {
+        "clear_on_idle": true
+      },
+      "watering_statuses": []
+    },
+    "suggested_start_time": null,
+    "timezone": {
+      "dst_offset": 3600,
+      "raw_offset": -21600,
+      "timezone_id": "America/Chicago",
+      "timezone_name": "Central Daylight Time"
+    },
+    "type": "sprinkler_timer",
+    "updated_at": "2026-08-30T20:39:33.822Z",
+    "user_id": "uu0000000000000000000005",
+    "water_sense_mode": "auto",
+    "weather_forecast_location_id": "ff000000000000000000000a",
+    "weather_station_id": "ww000000000000000000000b",
+    "zones": [
+      {
+        "added-at": 1746974350426,
+        "catch_cup_run_time": 0,
+        "catch_cup_volumes": [],
+        "device_id": "dd0000000000000000000007",
+        "end-date": "2025-05-11T09:39:40.587-05:00",
+        "flow_data": {
+          "cycle_run_time_sec": 25,
+          "cycle_volume_gal": 0.6603592199999999,
+          "flow_rate_gpm": 1.9125179051811474,
+          "high_flow_threshold_gpm": 2.1993955909583196,
+          "low_flow_threshold_gpm": 1.6256402194039752
+        },
+        "geometry": {
+          "length": 20,
+          "type": "rectangle",
+          "width": 20
+        },
+        "landscape_type": "warm_season_turf",
+        "num_sprinklers": 1,
+        "run_time": 0.5,
+        "slope_grade": 0,
+        "smart_watering_enabled": false,
+        "soil_type": "loam",
+        "sprinkler_type": "oscillator",
+        "start-date": "2025-05-11T14:39:10.587Z",
+        "station": 1,
+        "status": "success",
+        "sun_shade": "mostly_sunny"
+      }
+    ]
+  },
+  {
+    "address": {
+      "city": "Anytown",
+      "country": "US",
+      "state": "CA",
+      "street_address": "123 Fake St",
+      "zip_code": "00000"
+    },
+    "created_at": "2025-05-11T22:18:29.316Z",
+    "device_gateway_topic": "REDACTED_t_12",
+    "firmware_version": "0056",
+    "full_location": "123 Fake St, Anytown, US",
+    "hardware_version": "BH1G2-0002",
+    "id": "dd000000000000000000000d",
+    "is_connected": true,
+    "last_connected_at": "2026-08-28T07:32:43.587Z",
+    "location": {
+      "coordinates": [
+        0.0,
+        0.0
+      ],
+      "type": "Point"
+    },
+    "mac_address": "REDACTED_m_14",
+    "name": "Wi-Fi Hub",
+    "network_interface": "wifi",
+    "network_topology_id": "nn000000000000000000000f",
+    "reference": "REDACTED_m_14",
+    "status": {
+      "rain_delay": 0,
+      "run_mode": "auto",
+      "status_updated_at": "2026-08-28T07:32:43.587Z",
+      "watering_status": null
+    },
+    "timezone": {
+      "dst_offset": 3600,
+      "raw_offset": -21600,
+      "timezone_id": "America/Chicago",
+      "timezone_name": "Central Daylight Time"
+    },
+    "type": "bridge",
+    "updated_at": "2026-08-28T07:32:43.587Z",
+    "user_id": "uu0000000000000000000005",
+    "wifi_version": 83951872
+  },
+  {
+    "address": {
+      "city": "Anytown",
+      "country": "US",
+      "state": "CA",
+      "street_address": "123 Fake St",
+      "zip_code": "00000"
+    },
+    "battery": {
+      "charging": false,
+      "mv": 2992,
+      "percent": 98
+    },
+    "created_at": "2025-05-11T22:20:41.988Z",
+    "device_gateway_topic": "REDACTED_t_12",
+    "et_id": "ee0000000000000000000006",
+    "firmware_version": "141",
+    "full_location": "123 Fake St, Anytown, US",
+    "google_home_status": null,
+    "hardware_version": "HT34A-0001",
+    "id": "dd0000000000000000000010",
+    "is_connected": true,
+    "is_husqvarna_water": false,
+    "last_connected_at": "2026-08-30T20:44:20.881Z",
+    "location": {
+      "coordinates": [
+        0.0,
+        0.0
+      ],
+      "type": "Point"
+    },
+    "mac_address": "REDACTED_m_17",
+    "name": "Smart Hose Tap Timer",
+    "network_topology_id": "nn000000000000000000000f",
+    "num_stations": 4,
+    "reference": "REDACTED_m_17",
+    "restricted_frequency": null,
+    "smart_watering_device_group_id": "gg0000000000000000000012",
+    "smart_watering_enabled": true,
+    "status": {
+      "last_battery_alarm_at": "2026-07-18T12:34:51.675Z",
+      "phy": "le_coded_s8_125",
+      "provisioned": true,
+      "rain_delay": 0,
+      "rain_delay_overridden_at": "2026-06-30T22:34:12.347Z",
+      "rain_delay_started_at": "2026-08-30T20:41:50.000Z",
+      "rssi": -76,
+      "run_mode": "auto",
+      "status_updated_at": "2026-08-30T20:44:20.881Z",
+      "watering_status": null,
+      "watering_statuses": []
+    },
+    "suggested_start_time": null,
+    "timezone": {
+      "dst_offset": 3600,
+      "raw_offset": -21600,
+      "timezone_id": "America/Chicago",
+      "timezone_name": "Central Daylight Time"
+    },
+    "type": "sprinkler_timer",
+    "updated_at": "2026-08-30T20:44:20.882Z",
+    "user_id": "uu0000000000000000000005",
+    "water_sense_mode": "auto",
+    "weather_delay_thresholds": {
+      "freeze_temp_f": 41,
+      "precip_in": 0.11,
+      "precip_prob": 25,
+      "wind_speed_mph": 20
+    },
+    "weather_forecast_location_id": "ff000000000000000000000a",
+    "weather_station_id": "ww000000000000000000000b",
+    "zones": [
+      {
+        "catch_cup_run_time": 0,
+        "catch_cup_volumes": [],
+        "num_sprinklers": 0,
+        "smart_watering_enabled": false,
+        "station": 1
+      },
+      {
+        "catch_cup_run_time": 0,
+        "catch_cup_volumes": [],
+        "num_sprinklers": 0,
+        "smart_watering_enabled": false,
+        "station": 2
+      },
+      {
+        "catch_cup_run_time": 0,
+        "catch_cup_volumes": [],
+        "num_sprinklers": 0,
+        "smart_watering_enabled": false,
+        "station": 3
+      },
+      {
+        "catch_cup_run_time": 0,
+        "catch_cup_volumes": [],
+        "num_sprinklers": 0,
+        "smart_watering_enabled": false,
+        "station": 4
+      }
+    ]
+  }
+]
