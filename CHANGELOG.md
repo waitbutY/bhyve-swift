@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2 — 2026-08-30
+
+Adds public memberwise initializers to `Battery`, `Zone`, `Device`,
+`DeviceStatus`, `Program`, `RunTime`, `WateringEvent`, and `Irrigation`.
+Previously these `Codable` structs only exposed the synthesized
+`Decodable.init(from:)`, so a consumer outside this package (e.g. test
+fixtures or UI code building a modified `Program` to send back via
+`updateProgram`) couldn't construct one directly. Purely additive, no
+behavior change.
+
 ## 0.1.1 — 2026-08-30
 
 Fixes the WebSocket handshake against the live Orbit B-hyve server. Two

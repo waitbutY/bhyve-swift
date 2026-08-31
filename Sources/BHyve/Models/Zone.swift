@@ -12,6 +12,30 @@ public struct Zone: Codable, Sendable {
     public let startDate: Date?
     public let endDate: Date?
 
+    public init(
+        station: Int,
+        deviceID: String? = nil,
+        smartWateringEnabled: Bool? = nil,
+        runTime: Double? = nil,
+        landscapeType: String? = nil,
+        soilType: String? = nil,
+        sprinklerType: String? = nil,
+        addedAt: Int? = nil,
+        startDate: Date? = nil,
+        endDate: Date? = nil
+    ) {
+        self.station = station
+        self.deviceID = deviceID
+        self.smartWateringEnabled = smartWateringEnabled
+        self.runTime = runTime
+        self.landscapeType = landscapeType
+        self.soilType = soilType
+        self.sprinklerType = sprinklerType
+        self.addedAt = addedAt
+        self.startDate = startDate
+        self.endDate = endDate
+    }
+
     enum CodingKeys: String, CodingKey {
         case station
         case deviceID = "device_id"

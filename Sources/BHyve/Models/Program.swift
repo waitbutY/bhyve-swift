@@ -13,6 +13,32 @@ public struct Program: Codable, Sendable, Identifiable {
     public let createdAt: Date
     public let updatedAt: Date
 
+    public init(
+        id: String,
+        deviceID: String,
+        name: String,
+        enabled: Bool,
+        budget: Int,
+        frequency: Frequency,
+        runTimes: [RunTime],
+        startTimes: [String],
+        programStartDate: Date,
+        createdAt: Date,
+        updatedAt: Date
+    ) {
+        self.id = id
+        self.deviceID = deviceID
+        self.name = name
+        self.enabled = enabled
+        self.budget = budget
+        self.frequency = frequency
+        self.runTimes = runTimes
+        self.startTimes = startTimes
+        self.programStartDate = programStartDate
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
+
     enum CodingKeys: String, CodingKey {
         case id, name, enabled, budget, frequency
         case deviceID = "device_id"
@@ -27,6 +53,11 @@ public struct Program: Codable, Sendable, Identifiable {
 public struct RunTime: Codable, Sendable, Equatable {
     public let station: Int
     public let runTime: Int
+
+    public init(station: Int, runTime: Int) {
+        self.station = station
+        self.runTime = runTime
+    }
 
     enum CodingKeys: String, CodingKey {
         case station
