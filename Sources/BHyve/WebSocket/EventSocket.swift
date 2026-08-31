@@ -26,7 +26,12 @@ actor EventSocket {
         return ladder[min(attempt, ladder.count - 1)]
     }
 
-    func events() -> AsyncThrowingStream<BHyveEvent, Error> {
+    func send(_ payload: Data) async throws {
+        guard let task else { throw BHyveError.transport("socket not connected") }
+        try await task.send(.data(payload))
+    }
+
+    nonisolated func events() -> AsyncThrowingStream<BHyveEvent, Error> {
         AsyncThrowingStream { continuation in
             let task = Task { [weak self] in
                 var attempt = 0

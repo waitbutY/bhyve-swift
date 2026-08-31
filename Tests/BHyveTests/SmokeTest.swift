@@ -3,7 +3,7 @@ import XCTest
 
 final class SmokeTest: XCTestCase {
     func testInit() async {
-        _ = BHyveClient()
+        _ = BHyveClient(credentialStore: InMemoryCredentialStore())
         XCTAssert(true)
     }
 
