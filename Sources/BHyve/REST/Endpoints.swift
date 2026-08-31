@@ -2,6 +2,10 @@ import Foundation
 
 enum Endpoints {
     static let baseURL = URL(string: "https://api.orbitbhyve.com")!
+    static let webOrigin = "https://techsupport.orbitbhyve.com"
+    static let appID = "Bhyve Dashboard"
+    static let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
 
     case login(email: String, password: String)
     case devices(userID: String)
@@ -48,11 +52,16 @@ enum Endpoints {
         req.httpBody = body
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("application/json", forHTTPHeaderField: "Accept")
-        req.setValue("bhyve-swift/0.1", forHTTPHeaderField: "User-Agent")
+        req.setValue(Self.userAgent, forHTTPHeaderField: "User-Agent")
+        req.setValue(Self.webOrigin, forHTTPHeaderField: "Origin")
+        req.setValue("\(Self.webOrigin)/", forHTTPHeaderField: "Referer")
+        req.setValue(Self.appID, forHTTPHeaderField: "orbit-app-id")
         if requiresAuth {
             guard let token else { throw BHyveError.notLoggedIn }
             req.setValue(token, forHTTPHeaderField: "orbit-api-key")
             req.setValue(token, forHTTPHeaderField: "Orbit-Session-Token")
+        } else {
+            req.setValue("null", forHTTPHeaderField: "orbit-api-key")
         }
         return req
     }

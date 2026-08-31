@@ -4,7 +4,7 @@ import XCTest
 final class EventSocketTests: XCTestCase {
     func testHelloMessageJSON() throws {
         let msg = EventSocket.helloMessage(token: "TOK")
-        let obj = try JSONSerialization.jsonObject(with: msg) as? [String: Any]
+        let obj = try JSONSerialization.jsonObject(with: Data(msg.utf8)) as? [String: Any]
         XCTAssertEqual(obj?["event"] as? String, "app_connection")
         XCTAssertEqual(obj?["orbit_session_token"] as? String, "TOK")
     }

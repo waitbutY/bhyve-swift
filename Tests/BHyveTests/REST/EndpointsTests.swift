@@ -11,7 +11,9 @@ final class EndpointsTests: XCTestCase {
         let session = try XCTUnwrap(json?["session"] as? [String: Any])
         XCTAssertEqual(session["email"] as? String, "a@b.co")
         XCTAssertEqual(session["password"] as? String, "pw")
-        XCTAssertNil(req.value(forHTTPHeaderField: "orbit-api-key"))
+        XCTAssertEqual(req.value(forHTTPHeaderField: "orbit-api-key"), "null")
+        XCTAssertEqual(req.value(forHTTPHeaderField: "orbit-app-id"), "Bhyve Dashboard")
+        XCTAssertEqual(req.value(forHTTPHeaderField: "Origin"), "https://techsupport.orbitbhyve.com")
     }
 
     func testDevicesRequestSetsBothAuthHeaders() throws {

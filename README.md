@@ -35,16 +35,6 @@ for try await event in client.events() {
 }
 ```
 
-## Known issues (0.1.x)
-
-- The WebSocket hello handshake at `wss://api.orbitbhyve.com/v1/events` is currently
-  dropped by the server regardless of payload shape — see [#1](https://github.com/waitbutY/bhyve-swift/issues/1).
-  `client.events()` will reconnect-loop indefinitely without emitting frames, and
-  the WebSocket-based mutations (`startZones`, `stopWatering`) will fail. REST
-  (`devices`, `programs`, `wateringHistory`, `setRainDelay`, `updateProgram`) is
-  fully functional. See `LiveWebSocketProbeTests` for how to diagnose additional
-  candidate hello payloads.
-
 ## License
 
 MIT

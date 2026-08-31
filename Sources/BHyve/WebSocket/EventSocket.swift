@@ -2,6 +2,9 @@ import Foundation
 
 actor EventSocket {
     static let url = URL(string: "wss://api.orbitbhyve.com/v1/events")!
+    static let origin = "https://techsupport.orbitbhyve.com"
+    static let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
 
     private let session: URLSession
     private let credentialStore: any BHyveCredentialStore
@@ -14,11 +17,12 @@ actor EventSocket {
         self.credentialStore = credentialStore
     }
 
-    static func helloMessage(token: String) -> Data {
-        try! JSONSerialization.data(withJSONObject: [
+    static func helloMessage(token: String) -> String {
+        let data = try! JSONSerialization.data(withJSONObject: [
             "event": "app_connection",
             "orbit_session_token": token,
         ])
+        return String(data: data, encoding: .utf8)!
     }
 
     static func backoffDelay(attempt: Int) -> TimeInterval {
@@ -26,9 +30,9 @@ actor EventSocket {
         return ladder[min(attempt, ladder.count - 1)]
     }
 
-    func send(_ payload: Data) async throws {
+    func send(_ payload: String) async throws {
         guard let task else { throw BHyveError.transport("socket not connected") }
-        try await task.send(.data(payload))
+        try await task.send(.string(payload))
     }
 
     nonisolated func events() -> AsyncThrowingStream<BHyveEvent, Error> {
@@ -58,12 +62,14 @@ actor EventSocket {
         guard let token = try await credentialStore.loadToken() else {
             throw BHyveError.notLoggedIn
         }
-        let request = URLRequest(url: Self.url)
+        var request = URLRequest(url: Self.url)
+        request.setValue(Self.origin, forHTTPHeaderField: "Origin")
+        request.setValue(Self.userAgent, forHTTPHeaderField: "User-Agent")
         let task = session.webSocketTask(with: request)
         self.task = task
         task.resume()
 
-        try await task.send(.data(Self.helloMessage(token: token)))
+        try await task.send(.string(Self.helloMessage(token: token)))
         startPingLoop(task: task)
 
         while !Task.isCancelled {
@@ -86,10 +92,8 @@ actor EventSocket {
         pingTask?.cancel()
         pingTask = Task { [weak task] in
             while let task, !Task.isCancelled {
-                try? await Task.sleep(nanoseconds: 25 * 1_000_000_000)
-                await withCheckedContinuation { (cont: CheckedContinuation<Void, Never>) in
-                    task.sendPing { _ in cont.resume() }
-                }
+                try? await Task.sleep(nanoseconds: 20 * 1_000_000_000)
+                try? await task.send(.string(#"{"event":"ping"}"#))
             }
         }
     }

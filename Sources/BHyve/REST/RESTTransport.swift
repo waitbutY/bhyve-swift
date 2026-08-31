@@ -56,7 +56,7 @@ actor RESTTransport {
             throw BHyveError.unauthorized
         }
         let sessionResponse = try JSONCoding.decoder.decode(SessionResponse.self, from: data)
-        try await credentialStore.store(token: sessionResponse.orbitSessionToken)
+        try await credentialStore.store(token: sessionResponse.orbitApiKey)
     }
 
     private func respectRateLimit() async throws {

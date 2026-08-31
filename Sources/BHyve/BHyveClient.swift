@@ -20,7 +20,7 @@ public actor BHyveClient {
         try await credentialStore.store(credentials: (email: email, password: password))
         let data = try await transport.send(.login(email: email, password: password))
         let session = try JSONCoding.decoder.decode(SessionResponse.self, from: data)
-        try await credentialStore.store(token: session.orbitSessionToken)
+        try await credentialStore.store(token: session.orbitApiKey)
     }
 
     // MARK: - Reads
@@ -55,8 +55,7 @@ public actor BHyveClient {
             "device_id": deviceID,
             "stations": stationPayload,
         ]
-        let data = try JSONSerialization.data(withJSONObject: payload)
-        try await socket.send(data)
+        try await socket.send(Self.jsonString(payload))
     }
 
     public func stopWatering(deviceID: String) async throws {
@@ -66,8 +65,12 @@ public actor BHyveClient {
             "device_id": deviceID,
             "stations": [] as [[String: Any]],
         ]
+        try await socket.send(Self.jsonString(payload))
+    }
+
+    private static func jsonString(_ payload: [String: Any]) throws -> String {
         let data = try JSONSerialization.data(withJSONObject: payload)
-        try await socket.send(data)
+        return String(data: data, encoding: .utf8)!
     }
 
     public func setRainDelay(deviceID: String, hours: Int) async throws {
