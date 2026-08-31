@@ -6,4 +6,9 @@ final class SmokeTest: XCTestCase {
         _ = BHyveClient()
         XCTAssert(true)
     }
+
+    func testFixtureLoaderResolvesSession() throws {
+        let data = try Fixture.data("session.json")
+        XCTAssertGreaterThan(data.count, 100)
+    }
 }
