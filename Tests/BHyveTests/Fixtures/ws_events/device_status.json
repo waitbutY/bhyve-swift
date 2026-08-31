@@ -1,0 +1,5 @@
+{
+  "event": "device_status",
+  "device_id": "dd0000000000000000000007",
+  "status": {"run_mode": "auto", "rain_delay": 0, "watering_status": null}
+}

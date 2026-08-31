@@ -1,0 +1,5 @@
+{
+  "event": "watering_complete",
+  "device_id": "dd0000000000000000000007",
+  "current_station": 3
+}

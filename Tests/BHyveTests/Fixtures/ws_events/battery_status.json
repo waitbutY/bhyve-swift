@@ -1,0 +1,7 @@
+{
+  "event": "battery_status",
+  "device_id": "dd0000000000000000000007",
+  "percent": 43,
+  "mv": 2659,
+  "charging": false
+}

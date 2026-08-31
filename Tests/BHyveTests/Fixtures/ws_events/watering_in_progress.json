@@ -1,0 +1,7 @@
+{
+  "event": "watering_in_progress_notification",
+  "device_id": "dd0000000000000000000007",
+  "current_station": 3,
+  "run_time": 10,
+  "started_watering_station_at": "2026-08-30T18:00:00.000Z"
+}
