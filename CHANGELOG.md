@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3 — 2026-10-01
+
+Fixes `devices()` failing with a `keyNotFound` decoding error when a
+sprinkler timer's `battery` object omits `charging`. `Battery.charging`
+now defaults to `false` when absent, matching the WebSocket
+`batteryStatus` decoder. No public API change.
+
 ## 0.1.2 — 2026-08-30
 
 Adds public memberwise initializers to `Battery`, `Zone`, `Device`,
