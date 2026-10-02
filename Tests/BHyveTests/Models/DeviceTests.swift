@@ -32,6 +32,12 @@ final class DeviceTests: XCTestCase {
         XCTAssertEqual(timer.status.rainDelay, 0)
     }
 
+    func testBatteryWithoutChargingKeyDefaultsToNotCharging() throws {
+        let data = Data(#"{"percent": 82, "mv": 3010}"#.utf8)
+        let battery = try JSONCoding.decoder.decode(Battery.self, from: data)
+        XCTAssertEqual(battery, Battery(percent: 82, charging: false, millivolts: 3010))
+    }
+
     func testDeviceStatusPreservesWateringStatusRaw() throws {
         let devices = try JSONCoding.decoder.decode([Device].self, from: Fixture.data("devices.json"))
         let timer = try XCTUnwrap(devices.first { $0.type == .sprinklerTimer })

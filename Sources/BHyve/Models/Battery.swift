@@ -15,4 +15,12 @@ public struct Battery: Codable, Sendable, Equatable {
         case percent, charging
         case millivolts = "mv"
     }
+
+    // Some timers omit `charging` from the REST payload.
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        percent = try c.decode(Int.self, forKey: .percent)
+        charging = try c.decodeIfPresent(Bool.self, forKey: .charging) ?? false
+        millivolts = try c.decode(Int.self, forKey: .millivolts)
+    }
 }
